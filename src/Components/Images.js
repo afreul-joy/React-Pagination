@@ -4,10 +4,11 @@ import '../App.css'
 
 export default function Images (props) {
     const {data} = props; 
+    console.log(data)
     const [currentItems, setCurrentItems] = useState([]); // show in page 
     const [pageCount, setPageCount] = useState(0); // 
     const [itemOffset, setItemOffset] = useState(0); //index of the first item of currentPage
-    const itemsPerPage = 6;
+    const itemsPerPage = 2;
     
     useEffect(() => {
         const endOffset = itemOffset + itemsPerPage; //index of the last item of currentPage
@@ -31,7 +32,7 @@ export default function Images (props) {
               {currentItems.map(image =>{
                   return ( 
                       <div> 
-                          <img src={image.url} alt="" />
+                          <img src={image.img} alt="" />
                       </div>
                   );
               })}
