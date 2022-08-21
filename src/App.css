@@ -16,7 +16,7 @@
   width:100%;
 }
 
-.pagination{
+/* .pagination{
   list-style:none ;
   display: flex;
   justify-content: center;
@@ -57,4 +57,4 @@
 
 .pagination .active {
   background-color: #5AB1BB;
-}
+} */

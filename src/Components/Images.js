@@ -8,7 +8,7 @@ export default function Images (props) {
     const [currentItems, setCurrentItems] = useState([]); // show in page 
     const [pageCount, setPageCount] = useState(0); // 
     const [itemOffset, setItemOffset] = useState(0); //index of the first item of currentPage
-    const itemsPerPage = 2;
+    const itemsPerPage = 1;
     
     useEffect(() => {
         const endOffset = itemOffset + itemsPerPage; //index of the last item of currentPage
@@ -42,17 +42,22 @@ export default function Images (props) {
       <div className="pageResponsive">
       <ReactPaginate
         breakLabel="..."
-        nextLabel="next >"
+        previousLabel="previous"
+        nextLabel="next"
+        marginPagesDisplayed={2}
         onPageChange={handlePageClick}
         pageRangeDisplayed={3}
         pageCount={pageCount}
-        previousLabel="< previous"
         renderOnZeroPageCount={null}
-        containerClassName="pagination"
-        pageLinkClassName="page-num"
-        previousLinkClassName="previousNext"
-        nextLinkClassName="previousNext"
-        activeLinkClassName="active"
+        pageClassName={"page-item"}
+        pageLinkClassName={"page-link"}
+        previousClassName={"page-item"}
+        previousLinkClassName={"page-link"}
+        nextClassName={"page-item"}
+        nextLinkClassName={"page-link"}
+        breakLinkClassName={"page-link"} 
+        activeLinkClassName={"active"}
+        containerClassName={"pagination justify-content-center"}
       />
       </div>
 
